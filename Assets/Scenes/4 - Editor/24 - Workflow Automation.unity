@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 173729334}
   - 114: {fileID: 173729335}
-  - 114: {fileID: 173729336}
+  - 114: {fileID: 173729337}
   m_Layer: 0
   m_Name: '5: Hands-on'
   m_TagString: Untagged
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeName: UnityEditor.GameView
   maximize: 0
---- !u!114 &173729336
+--- !u!114 &173729337
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -173,10 +173,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 173729333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b6601c6dc00143008c2e1af5b1b167c, type: 3}
+  m_Script: {fileID: 11500000, guid: 14c599c8b52f94097bc75c759d58d0ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeName: JavaBuildSettings
+  asset: {fileID: 102900000, guid: e70004577f9004a62b73b2b32cc9031b, type: 3}
 --- !u!1 &378213706
 GameObject:
   m_ObjectHideFlags: 0
