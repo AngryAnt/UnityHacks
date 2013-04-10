@@ -1,0 +1,11 @@
+This Unity editor extension automatically compiles, signs and bundles any Java source files located below the path of /Assets/Plugins/Android/src/.
+
+When compiling, the specified Android SDK and the Unity android Java library are both referenced. Additional jar archives found at /Assets/Plugins/Android and below are also referenced.
+
+A compile is automatically triggered when any target Java source file is changed or otherwise imported. Any Java compiler errors are redirected to the Unity console.
+
+Setup instructions:
+
+1) Copy to Assets folder.
+2) Configure build settings in Project Settings menu.
+3) Profit!
