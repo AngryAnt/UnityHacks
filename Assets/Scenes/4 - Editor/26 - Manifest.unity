@@ -614,6 +614,45 @@ Prefab:
   m_RootGameObject: {fileID: 1870062933}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1214129365
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100002, guid: b0ad22d8988cf4e5c94e6fe10eb49bb3, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1214129367}
+  - 114: {fileID: 1214129366}
+  m_Layer: 0
+  m_Name: '4: Open script'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1214129366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1214129365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc5477a3e6494d71b9625d4d44a22df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asset: {fileID: 11500000, guid: 1870f570b85924bd7b47cda461aadef0, type: 3}
+--- !u!4 &1214129367
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: b0ad22d8988cf4e5c94e6fe10eb49bb3, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1214129365}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .0799999982, y: .469999999, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1001 &1442405377
 Prefab:
   m_ObjectHideFlags: 0
@@ -708,6 +747,7 @@ MonoBehaviour:
   - {fileID: 1870062933}
   - {fileID: 254417572}
   - {fileID: 861420998}
+  - {fileID: 1214129365}
   autoBuildFirst: 0
 --- !u!4 &1478138119
 Transform:
@@ -747,7 +787,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11400000, guid: 31201b6582ff142939594b830f6fa53f, type: 2}
       propertyPath: build.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 31201b6582ff142939594b830f6fa53f, type: 2}
       propertyPath: m_LocalPosition.x
@@ -792,7 +832,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 31201b6582ff142939594b830f6fa53f, type: 2}
       propertyPath: build.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1214129365}
     - target: {fileID: 11400000, guid: 31201b6582ff142939594b830f6fa53f, type: 2}
       propertyPath: build.Array.data[4]
       value: 
