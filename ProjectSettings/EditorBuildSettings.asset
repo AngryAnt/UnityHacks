@@ -62,4 +62,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/4 - Editor/28 - Script Bundle.unity
   - enabled: 1
-    path: Assets/Scenes/29 - Questions.unity
+    path: Assets/Scenes/29 - Nearly There.unity
+  - enabled: 1
+    path: Assets/Scenes/30 - Questions.unity
