@@ -14,6 +14,15 @@ public class Control : MonoBehaviour
 	int buildIndex = -1;
 
 
+	public int BuildIndex
+	{
+		get
+		{
+			return buildIndex;
+		}
+	}
+
+
 	void Awake ()
 	{
 		int targetLevel = PlayerPrefs.GetInt (kLastLevelPref, -1);
