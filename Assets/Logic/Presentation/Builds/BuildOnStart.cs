@@ -13,7 +13,9 @@ public class BuildOnStart : MonoBehaviour
 
 #if UNITY_EDITOR
 	public BuildTarget target = BuildTarget.WebPlayer;
-	public BuildOptions options = BuildOptions.AutoRunPlayer;
+
+
+	BuildOptions options = BuildOptions.AutoRunPlayer | BuildOptions.WebPlayerOfflineDeployment;
 
 
 	void Reset ()
