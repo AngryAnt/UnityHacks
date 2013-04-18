@@ -30,6 +30,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/3 - Runtime/12 - Animation Curves Outlined.unity
   - enabled: 1
+    path: Assets/Scenes/Memes/Branch.unity
+  - enabled: 1
     path: Assets/Scenes/3 - Runtime/13 - Data Re-use.unity
   - enabled: 1
     path: Assets/Scenes/3 - Runtime/14 - Stealth System.unity
@@ -46,6 +48,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/3 - Runtime/20 - Rapid Game Development.unity
   - enabled: 1
+    path: Assets/Scenes/Memes/Rex.unity
+  - enabled: 1
     path: Assets/Scenes/4 - Editor/21 - Editor.unity
   - enabled: 1
     path: Assets/Scenes/4 - Editor/22 - Importers.unity
@@ -54,6 +58,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/4 - Editor/24 - Workflow Automation.unity
   - enabled: 1
+    path: Assets/Scenes/Memes/Five.unity
+  - enabled: 1
     path: Assets/Scenes/4 - Editor/25 - Bundles.unity
   - enabled: 1
     path: Assets/Scenes/4 - Editor/26 - Manifest.unity
@@ -61,6 +67,8 @@ EditorBuildSettings:
     path: Assets/Scenes/4 - Editor/27 - Prefab Bundle.unity
   - enabled: 1
     path: Assets/Scenes/4 - Editor/28 - Script Bundle.unity
+  - enabled: 1
+    path: Assets/Scenes/Memes/Surf.unity
   - enabled: 1
     path: Assets/Scenes/29 - Nearly There.unity
   - enabled: 1
