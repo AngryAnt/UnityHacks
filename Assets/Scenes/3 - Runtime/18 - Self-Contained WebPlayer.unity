@@ -120,8 +120,73 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1248145070}
+  - {fileID: 128758652}
   - {fileID: 639051171}
   m_Father: {fileID: 0}
+--- !u!1 &128758651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100006, guid: 26b6357f05b884355a9e8aa636630096, type: 2}
+  m_PrefabInternal: {fileID: 1690571912}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 128758652}
+  - 132: {fileID: 128758654}
+  - 114: {fileID: 128758653}
+  m_Layer: 0
+  m_Name: Progress
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &128758652
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400006, guid: 26b6357f05b884355a9e8aa636630096, type: 2}
+  m_PrefabInternal: {fileID: 1690571912}
+  m_GameObject: {fileID: 128758651}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .00999999978, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 81096612}
+--- !u!114 &128758653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 26b6357f05b884355a9e8aa636630096,
+    type: 2}
+  m_PrefabInternal: {fileID: 1690571912}
+  m_GameObject: {fileID: 128758651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e6c7b975f2c4906b9e6c44a45e8de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!132 &128758654
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 13200000, guid: 26b6357f05b884355a9e8aa636630096,
+    type: 2}
+  m_PrefabInternal: {fileID: 1690571912}
+  m_GameObject: {fileID: 128758651}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: Progress
+  m_Anchor: 6
+  m_Alignment: 0
+  m_PixelOffset: {x: 0, y: 0}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 12800000, guid: fc6d3ee4d8c404a54a0db7c108f9312b, type: 3}
+  m_Material: {fileID: 0}
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4283190348
+  m_PixelCorrect: 1
+  m_RichText: 1
 --- !u!1 &221402405
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,6 +859,7 @@ MonoBehaviour:
   - {fileID: 1788675762}
   - {fileID: 271407314}
   - {fileID: 1742656956}
+  - {fileID: 1988043804}
   autoBuildFirst: 0
 --- !u!4 &1478138119
 Transform:
@@ -833,7 +899,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11400000, guid: 31201b6582ff142939594b830f6fa53f, type: 2}
       propertyPath: build.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 31201b6582ff142939594b830f6fa53f, type: 2}
       propertyPath: m_LocalPosition.x
@@ -878,7 +944,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 31201b6582ff142939594b830f6fa53f, type: 2}
       propertyPath: build.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1988043804}
     - target: {fileID: 11400000, guid: 31201b6582ff142939594b830f6fa53f, type: 2}
       propertyPath: build.Array.data[4]
       value: 
@@ -1045,4 +1111,42 @@ MonoBehaviour:
   - Assets/Scenes/3 - Runtime/18 - Self-Contained WebPlayer.unity
   buttonIcon: {fileID: 2800000, guid: 32adb026a2fcc4b1f879a4b03d8c2227, type: 3}
   target: 6
-  options: 4
+--- !u!1 &1988043804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1988043806}
+  - 114: {fileID: 1988043807}
+  m_Layer: 0
+  m_Name: '4: Load js script'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1988043806
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1988043804}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &1988043807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1988043804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc5477a3e6494d71b9625d4d44a22df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asset: {fileID: 4900000, guid: dd8ae0c39573c4532b3fe1e09b9ea39b, type: 3}
