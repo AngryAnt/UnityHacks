@@ -291,6 +291,8 @@ using UnityAssets;
 
 		void Record ()
 		{
+            MouseRecord();
+
 			foreach (Touch touch in Input.touches)
 			{
 				if (trackedTouches.ContainsKey (touch.fingerId))
@@ -331,5 +333,45 @@ using UnityAssets;
 				}
 			}
 		}
+
+        private void MouseRecord()
+        {
+            if (trackedTouches.ContainsKey(MOUSE_BUTTON_ID))
+            {
+                if (Time.time - trackedTouches[MOUSE_BUTTON_ID].startTime > maxDuration)
+                {
+                    trackedTouches.Remove(MOUSE_BUTTON_ID);
+                }
+                else
+                {
+                    TrackedTouch trackedTouch = trackedTouches[MOUSE_BUTTON_ID];
+
+                    if (Input.GetMouseButtonUp(0)) // TouchPhase.Ended
+                    {
+                        if (trackedTouch.NormalizedTravel.magnitude < maxTapScreenTravel)
+                        {
+                            SendGesture(GestureType.Tap, trackedTouch.Start, trackedTouch.Travel);
+                        }
+
+                        trackedTouches.Remove(MOUSE_BUTTON_ID);
+                    }
+                    else if (System.Math.Abs(Input.mousePosition.x - trackedTouch.End.x) > 0.01
+                          || System.Math.Abs(Input.mousePosition.y - trackedTouch.End.y) > 0.01) // TouchPhase.Moved
+                    {
+                        Vector2 position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+
+                        trackedTouches[MOUSE_BUTTON_ID].positions.Add(position);
+                    }
+                }
+            }
+            else if (Input.GetMouseButtonDown(0))
+            {
+                Vector2 position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+
+                trackedTouches[MOUSE_BUTTON_ID] = new TrackedTouch(MOUSE_BUTTON_ID, position);
+            }
+        }
+
+        private const int MOUSE_BUTTON_ID = int.MinValue;
 	}
 //}
