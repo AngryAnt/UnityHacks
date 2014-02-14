@@ -107,7 +107,10 @@ using UnityAssets;
 		{
 			foreach (MonoBehaviour receiver in receivers)
 			{
-				receiver.SendMessage ("OnGesture", new Gesture (type, start, direction));
+                if (receiver.enabled)
+                {
+				    receiver.SendMessage ("OnGesture", new Gesture (type, start, direction));
+                }
 			}
 
 			if (!trackMultiple)
