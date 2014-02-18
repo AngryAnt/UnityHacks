@@ -1,3 +1,7 @@
+#if UNITY_EDITOR || UNITY_STANDALONE || UNITY_WEBPLAYER || UNITY_FLASH
+#define RECORD_MOUSE_INPUT
+#endif
+
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -35,6 +39,9 @@ using UnityAssets;
 
 	public class TouchGestures : MonoBehaviour
 	{
+		// Could be any value, just needs to be outside of the range used by the touch tracker
+		const int kMouseButtonID = -1;
+		
 		class TrackedTouch
 		{
 			public int fingerId;
@@ -107,7 +114,10 @@ using UnityAssets;
 		{
 			foreach (MonoBehaviour receiver in receivers)
 			{
-				receiver.SendMessage ("OnGesture", new Gesture (type, start, direction));
+                if (receiver.enabled)
+                {
+				    receiver.SendMessage ("OnGesture", new Gesture (type, start, direction));
+                }
 			}
 
 			if (!trackMultiple)
@@ -291,6 +301,8 @@ using UnityAssets;
 
 		void Record ()
 		{
+			MouseRecord();
+
 			foreach (Touch touch in Input.touches)
 			{
 				if (trackedTouches.ContainsKey (touch.fingerId))
@@ -331,5 +343,44 @@ using UnityAssets;
 				}
 			}
 		}
+
+		[System.Diagnostics.Conditional("RECORD_MOUSE_INPUT")]
+	        void MouseRecord ()
+	        {
+	            if (trackedTouches.ContainsKey(kMouseButtonID))
+	            {
+	                if (Time.time - trackedTouches[kMouseButtonID].startTime > maxDuration)
+	                {
+	                    trackedTouches.Remove(kMouseButtonID);
+	                }
+	                else
+	                {
+	                    TrackedTouch trackedTouch = trackedTouches[kMouseButtonID];
+	
+	                    if (Input.GetMouseButtonUp(0)) // TouchPhase.Ended
+	                    {
+	                        if (trackedTouch.NormalizedTravel.magnitude < maxTapScreenTravel)
+	                        {
+	                            SendGesture(GestureType.Tap, trackedTouch.Start, trackedTouch.Travel);
+	                        }
+	
+	                        trackedTouches.Remove(kMouseButtonID);
+	                    }
+	                    else if (System.Math.Abs(Input.mousePosition.x - trackedTouch.End.x) > 0.01
+	                          || System.Math.Abs(Input.mousePosition.y - trackedTouch.End.y) > 0.01) // TouchPhase.Moved
+	                    {
+	                        Vector2 position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+	
+	                        trackedTouches[kMouseButtonID].positions.Add(position);
+	                    }
+	                }
+	            }
+	            else if (Input.GetMouseButtonDown(0))
+	            {
+	                Vector2 position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+	
+	                trackedTouches[kMouseButtonID] = new TrackedTouch(kMouseButtonID, position);
+	            }
+	        }
 	}
 //}
